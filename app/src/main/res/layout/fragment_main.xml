@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/eightdp"
+        android:text="@string/size"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginHorizontal="@dimen/eightdp"
+        android:id="@+id/size"
+        android:hint="@string/size"
+        android:inputType="number"
+        android:textAppearance="?attr/textAppearanceBody1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/eightdp"
+        android:id="@+id/classAccuracy"
+        android:text="@string/classAccuracy"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_margin="@dimen/eightdp"
+        android:id="@+id/val"
+        android:hint="@string/val"
+        android:inputType="number"
+        android:textAppearance="?attr/textAppearanceBody1"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_margin="@dimen/eightdp"
+        android:id="@+id/hole"
+        android:hint="@string/hole"
+        android:inputType="number"
+        android:textAppearance="?attr/textAppearanceBody2"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/eightdp"
+        android:id="@+id/deviations"
+        android:text="@string/deviations"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintTop_toBottomOf="@+id/hole"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardView"
+        android:layout_margin="@dimen/eightdp"
+        android:layout_gravity="center"
+        android:elevation="@dimen/eightdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/eightdp"
+                android:paddingHorizontal="@dimen/eightdp"
+                android:minHeight="30dp"
+                android:id="@+id/val_result"
+                android:text="512"
+                android:gravity="start|center_vertical"
+                android:textAlignment="gravity"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/eightdp"
+                android:paddingHorizontal="@dimen/eightdp"
+                android:minHeight="30dp"
+                android:id="@+id/hole_result"
+                android:text="512"
+                android:gravity="start|center_vertical"
+                android:textAlignment="gravity"
+                app:layout_constraintEnd_toEndOf="parent"
+              />
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</LinearLayout>
