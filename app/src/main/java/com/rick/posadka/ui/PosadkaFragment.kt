@@ -1,4 +1,4 @@
-package com.rick.posadka
+package com.rick.posadka.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rick.posadka.databinding.FragmentMainBinding
 
-class MainFragment: Fragment() {
+class PosadkaFragment: Fragment() {
 
     private var _binding : FragmentMainBinding? = null
     private val binding get() = _binding!!
