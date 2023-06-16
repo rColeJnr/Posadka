@@ -13,9 +13,9 @@ interface PosadkaHoleDao {
     suspend fun insertHole(posadkaHole: PosadkaHole)
 
     @Query("SELECT * FROM posadka_hole ORDER BY class ASC")
-    suspend fun getAllHoles(): List<PosadkaHole>
+    fun getAllHoles(): List<PosadkaHole>
 
     @Query("SELECT * FROM posadka_hole WHERE class LIKE :queryString " +
             "AND size LIKE :querySize")
-    suspend fun getHoleByClass(queryString: String, querySize: Int): PosadkaHole
+    fun getHoleByClass(queryString: String, querySize: Int): PosadkaHole
 }

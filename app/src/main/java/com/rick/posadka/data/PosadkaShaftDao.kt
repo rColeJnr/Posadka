@@ -15,11 +15,11 @@ interface PosadkaShaftDao {
     @Query(
         "SELECT * FROM posadka_shaft ORDER BY class ASC"
     )
-    suspend fun getAllShafts(): List<PosadkaShaft>
+    fun getAllShafts(): List<PosadkaShaft>
 
     @Query(
-        "SELECT class FROM posadka_shaft WHERE size LIKE :queryString " +
+        "SELECT class FROM posadka_shaft WHERE class LIKE :queryString " +
                 "AND size LIKE :querySize"
     )
-    suspend fun getShaftByClass(queryString: String, querySize: Int): PosadkaShaft
+    fun getShaftByClass(queryString: String, querySize: Int): PosadkaShaft
 }
