@@ -13,7 +13,7 @@ abstract class PosadkaDatabase: RoomDatabase() {
     abstract fun posadkaShaftDao(): PosadkaShaftDao
 
     companion object {
-        private const val DATABASE_NAME = "posadka_database"
+        private const val DATABASE_NAME = "pasadki.db"
 
         // For singleton initialization
         @Volatile private var instance: PosadkaDatabase? = null
@@ -27,7 +27,7 @@ abstract class PosadkaDatabase: RoomDatabase() {
         // create and pre-populate the db
         private fun buildDatabase(context: Context): PosadkaDatabase {
             return Room.databaseBuilder(context, PosadkaDatabase::class.java, DATABASE_NAME)
-                .createFromAsset("database/posadka_database.db")
+                .createFromAsset("database/pasadki.db")
                 .build()
         }
     }
