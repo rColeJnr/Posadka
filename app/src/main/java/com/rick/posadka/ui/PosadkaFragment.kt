@@ -25,12 +25,12 @@ class PosadkaFragment: Fragment() {
     ): View? {
         _binding = FragmentPosadkaBinding.inflate(inflater, container, false)
 
-        binding.bindState()
+        binding.bindViews()
 
         return binding.root
     }
 
-    private fun FragmentPosadkaBinding.bindState() {
+    private fun FragmentPosadkaBinding.bindViews() {
 
     }
 

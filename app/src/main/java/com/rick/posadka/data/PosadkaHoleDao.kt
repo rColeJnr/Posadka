@@ -16,6 +16,6 @@ interface PosadkaHoleDao {
     fun getAllHoles(): List<PosadkaHole>
 
     @Query("SELECT * FROM posadka_hole WHERE class LIKE :queryString " +
-            "AND size LIKE :querySize")
+            "AND size <= :querySize AND size > prevsize")
     fun getHoleByClass(queryString: String, querySize: Int): PosadkaHole
 }

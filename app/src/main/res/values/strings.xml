@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Posadka</string>
     <string name="size">Размер</string>
-    <string name="hole">Отверстие</string>
+    <string name="hole">Система отверстия</string>
     <string name="classAccuracy">Класс точности</string>
-    <string name="val">Вал</string>
+    <string name="val">Система вала</string>
     <string name="deviations">Отклонения</string>
 </resources>

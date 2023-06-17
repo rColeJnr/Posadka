@@ -8,6 +8,8 @@ import androidx.room.PrimaryKey
 data class PosadkaShaft(
     @PrimaryKey(autoGenerate = false) val id : Int,
     val size: Int,
+    @ColumnInfo(name = "prevsize")
+    val prevSize: Int,
     @ColumnInfo(name = "class")
     val name: String,
     val highDeviation: Int,
