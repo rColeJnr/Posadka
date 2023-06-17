@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.rick.posadka.model.PosadkaHole
 import com.rick.posadka.model.PosadkaShaft
 
-@Database(entities = [PosadkaHole::class, PosadkaShaft::class], version = 1)
+@Database(entities = [PosadkaHole::class, PosadkaShaft::class], version = 1, exportSchema = false)
 abstract class PosadkaDatabase: RoomDatabase() {
     abstract fun posadkaHoleDao(): PosadkaHoleDao
     abstract fun posadkaShaftDao(): PosadkaShaftDao

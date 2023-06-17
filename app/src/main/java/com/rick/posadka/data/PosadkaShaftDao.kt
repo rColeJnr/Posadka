@@ -18,7 +18,7 @@ interface PosadkaShaftDao {
     fun getAllShafts(): List<PosadkaShaft>
 
     @Query(
-        "SELECT class FROM posadka_shaft WHERE class LIKE :queryString " +
+        "SELECT * FROM posadka_shaft WHERE class LIKE :queryString " +
                 "AND size <= :querySize AND size > prevsize"
     )
     fun getShaftByClass(queryString: String, querySize: Int): PosadkaShaft

@@ -6,12 +6,17 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "posadka_shaft")
 data class PosadkaShaft(
+    @ColumnInfo(name = "id")
     @PrimaryKey(autoGenerate = false) val id : Int,
+    @ColumnInfo(name = "size")
     val size: Int,
     @ColumnInfo(name = "prevsize")
     val prevSize: Int,
     @ColumnInfo(name = "class")
     val name: String,
+    @ColumnInfo(name = "highdeviation")
     val highDeviation: Int,
+    @ColumnInfo(name = "lowdeviation")
     val lowDeviation: Int
+
 )

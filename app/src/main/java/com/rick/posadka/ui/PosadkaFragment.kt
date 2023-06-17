@@ -1,6 +1,7 @@
 package com.rick.posadka.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,13 @@ class PosadkaFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentPosadkaBinding.inflate(inflater, container, false)
+
+        viewModel.getPosadkaHole(35, "D6")
+        viewModel.getPosadkaShaft(35, "H6")
+
+
+        Log.i("posadka", "here hole ${viewModel.posadkaHole}")
+        Log.i("posadka", "here shaft ${viewModel.posadkaShaft}")
 
         binding.bindViews()
 
