@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.rick.posadka.model.PosadkaHole
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PosadkaHoleDao {
@@ -13,9 +14,9 @@ interface PosadkaHoleDao {
     suspend fun insertHole(posadkaHole: PosadkaHole)
 
     @Query("SELECT * FROM posadka_hole ORDER BY class ASC")
-    fun getAllHoles(): List<PosadkaHole>
+    suspend fun getAllHoles(): List<PosadkaHole>
 
     @Query("SELECT * FROM posadka_hole WHERE class LIKE :queryString " +
             "AND size <= :querySize AND size > prevsize")
-    fun getHoleByClass(queryString: String, querySize: Int): PosadkaHole
+    fun getHoleByClass(queryString: String, querySize: Int): Flow<PosadkaHole>
 }

@@ -26,12 +26,16 @@ class PosadkaFragment: Fragment() {
     ): View? {
         _binding = FragmentPosadkaBinding.inflate(inflater, container, false)
 
-        viewModel.getPosadkaHole(35, "D6")
-        viewModel.getPosadkaShaft(35, "H6")
+        viewModel.getPosadkaHole(3, "D6")
+        viewModel.getPosadkaShaft(30, "A10")
 
+    viewModel.posadkaHole.observe(viewLifecycleOwner, {
+        Log.i("posadka", "here hole ${it}")
+    })
 
-        Log.i("posadka", "here hole ${viewModel.posadkaHole}")
-        Log.i("posadka", "here shaft ${viewModel.posadkaShaft}")
+        viewModel.posadkaShaft.observe(viewLifecycleOwner, {
+        Log.i("posadka", "here shaft ${it}")
+        })
 
         binding.bindViews()
 

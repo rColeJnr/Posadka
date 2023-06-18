@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.rick.posadka.model.PosadkaShaft
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PosadkaShaftDao {
@@ -15,11 +16,11 @@ interface PosadkaShaftDao {
     @Query(
         "SELECT * FROM posadka_shaft ORDER BY class ASC"
     )
-    fun getAllShafts(): List<PosadkaShaft>
+    suspend fun getAllShafts(): List<PosadkaShaft>
 
     @Query(
         "SELECT * FROM posadka_shaft WHERE class LIKE :queryString " +
-                "AND size <= :querySize AND size > prevsize"
+                "AND size <= :querySize AND size > prev_size"
     )
-    fun getShaftByClass(queryString: String, querySize: Int): PosadkaShaft
+    fun getShaftByClass(queryString: String, querySize: Int): Flow<PosadkaShaft>
 }

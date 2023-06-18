@@ -2,6 +2,7 @@ package com.rick.posadka.data
 
 import com.rick.posadka.model.PosadkaHole
 import com.rick.posadka.model.PosadkaShaft
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -11,13 +12,13 @@ class PosadkaRepository @Inject constructor(
     private val posadkaShaftDao: PosadkaShaftDao
 ) {
 
-    fun getPosadkaShaft(size: Int, name: String): PosadkaShaft {
+    suspend fun getPosadkaShaft(size: Int, name: String): Flow<PosadkaShaft> {
 //        val queryString = "%${name.replace(' ', '%')}%"
         return posadkaShaftDao.getShaftByClass(querySize = size, queryString =name)
 
     }
 
-    fun getPosadkaHole(size: Int, name: String): PosadkaHole {
+    suspend fun getPosadkaHole(size: Int, name: String): Flow<PosadkaHole> {
 //        val queryString = "%${name.replace(' ', '%')}%"
         return posadkaHoleDao.getHoleByClass(querySize = size, queryString = name)
     }
