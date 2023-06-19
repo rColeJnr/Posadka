@@ -6,7 +6,6 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -48,29 +47,9 @@ class PosadkaFragment : Fragment() {
             }
         }
 
-        searchPosadka.setOnEditorActionListener { _, actionId, event ->
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                // Perform search
-                bindSearch()
-                true
-            } else {
-                false
-            }
-        }
-
-        size.setOnEditorActionListener { _, actionId, event ->
-            if (actionId == EditorInfo.IME_ACTION_GO) {
-                // Perform search
-                Toast.makeText(requireContext(), "Lol, os is just trolling you", Toast.LENGTH_LONG).show()
-                bindSearch()
-                true
-            } else {
-                false
-            }
-        }
-
-        size.setOnKeyListener { _, keyCode, event ->
+        searchPosadka.setOnKeyListener { _, keyCode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                // Perform search
                 bindSearch()
                 true
             } else {
@@ -85,8 +64,6 @@ class PosadkaFragment : Fragment() {
             val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(it.windowToken, 0)
         }
-
-
     }
 
     private fun FragmentPosadkaBinding.bindSearch() {
