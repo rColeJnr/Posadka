@@ -9,7 +9,7 @@ data class PosadkaHole(
     @ColumnInfo(name = "id")
     @PrimaryKey(autoGenerate = true) val id : Int,
     @ColumnInfo(name = "size")
-    val size: Int,
+    val size: Float,
     @ColumnInfo(name = "prevsize" )
     val prevSize: Int,
     @ColumnInfo(name = "class")

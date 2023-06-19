@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:keyboardNavigationCluster="true"
     android:orientation="vertical">
 
     <TextView
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/eightdp"
         android:hint="@string/size"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:minHeight="48dp"
         android:textAppearance="?attr/textAppearanceBody1" />
 
@@ -36,22 +37,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        app:thumbTint="@color/black"
-        app:trackTint="@android:color/darker_gray"
         android:layout_margin="@dimen/eightdp"
         android:checked="true"
         android:text="@string/hole"
-        android:textAppearance="?attr/textAppearanceBody2" />
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:thumbTint="@color/black"
+        app:trackTint="@android:color/darker_gray" />
 
-    <EditText
-        android:id="@+id/hole"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/eightdp"
-        android:hint="@string/hole"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:textAppearance="?attr/textAppearanceBody2" />
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/search_posadka"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/eightdp"
+            android:layout_weight="1"
+            android:hint="@string/gap"
+            android:inputType="textNoSuggestions"
+            android:minHeight="48dp"
+            android:textAppearance="?attr/textAppearanceBody2" />
+
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/eightdp"
+            android:src="@drawable/round_search_24" />
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/deviations"
@@ -76,7 +93,20 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/val_result"
+                android:id="@+id/error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/eightdp"
+                android:gravity="center"
+                android:minHeight="30dp"
+                android:paddingHorizontal="@dimen/eightdp"
+                android:text="@string/error"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/high_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/eightdp"
@@ -87,7 +117,7 @@
                 android:textAlignment="gravity" />
 
             <TextView
-                android:id="@+id/hole_result"
+                android:id="@+id/low_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/eightdp"

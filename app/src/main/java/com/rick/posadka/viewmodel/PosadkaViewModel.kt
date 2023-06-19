@@ -22,7 +22,7 @@ class PosadkaViewModel @Inject internal constructor(
     private val _posadkaShaft: MutableLiveData<PosadkaShaft> = MutableLiveData()
     val posadkaShaft: LiveData<PosadkaShaft> get() = _posadkaShaft
 
-    fun getPosadkaHole(size: Int, name: String) {
+    private fun getPosadkaHole(size: Float, name: String) {
         viewModelScope.launch(Dispatchers.IO) {
             posadkaRepository.getPosadkaHole(size, name).collect {
                 _posadkaHole.postValue(it)
@@ -30,7 +30,7 @@ class PosadkaViewModel @Inject internal constructor(
         }
     }
 
-    fun getPosadkaShaft(size: Int, name: String) {
+    private fun getPosadkaShaft(size: Float, name: String) {
         viewModelScope.launch(Dispatchers.IO) {
             posadkaRepository.getPosadkaShaft(size, name).collect {
                 _posadkaShaft.postValue(it)
@@ -38,4 +38,17 @@ class PosadkaViewModel @Inject internal constructor(
         }
     }
 
+    fun onAction(action: UiAction) {
+        when (action) {
+            is UiAction.SearchHole -> getPosadkaHole(action.size, action.query)
+            is UiAction.SearchShaft -> getPosadkaShaft(action.size, action.query)
+            else -> {}
+        }
+    }
+
+}
+
+sealed class UiAction {
+    data class SearchHole(val size: Float, val query: String) : UiAction()
+    data class SearchShaft(val size: Float, val query: String) : UiAction()
 }
