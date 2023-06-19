@@ -11,13 +11,13 @@ data class PosadkaShaft(
     @ColumnInfo(name = "size")
     val size: Int,
     @ColumnInfo(name = "prev_size")
-    val prevSize: Int? = null,
+    val prevSize: Int,
     @ColumnInfo(name = "class")
     val name: String,
     @ColumnInfo(name = "highdeviation")
-    val highDeviation: Int,
+    val highDeviation: Double,
     @ColumnInfo(name = "lowdeviation")
-    val lowDeviation: Int
+    val lowDeviation: Double
 
 )
 

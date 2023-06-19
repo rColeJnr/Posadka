@@ -13,13 +13,13 @@ class PosadkaRepository @Inject constructor(
 ) {
 
     suspend fun getPosadkaShaft(size: Int, name: String): Flow<PosadkaShaft> {
-//        val queryString = "%${name.replace(' ', '%')}%"
-        return posadkaShaftDao.getShaftByClass(querySize = size, queryString =name)
+        val queryString = "%${name.replace(' ', '%')}%"
+        return posadkaShaftDao.getShaftByClass(querySize = size, queryString =queryString)
 
     }
 
     suspend fun getPosadkaHole(size: Int, name: String): Flow<PosadkaHole> {
-//        val queryString = "%${name.replace(' ', '%')}%"
+        val queryString = "%${name.replace(' ', '%')}%"
         return posadkaHoleDao.getHoleByClass(querySize = size, queryString = name)
     }
     companion object {

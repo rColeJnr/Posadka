@@ -11,12 +11,12 @@ data class PosadkaHole(
     @ColumnInfo(name = "size")
     val size: Int,
     @ColumnInfo(name = "prevsize" )
-    val prevSize: Int? = null,
+    val prevSize: Int,
     @ColumnInfo(name = "class")
     val name: String,
     @ColumnInfo(name = "highdeviation")
-    val highDeviation: Int,
+    val highDeviation: Double,
     @ColumnInfo(name = "lowdeviaton")
-    val lowDeviation: Int
+    val lowDeviation: Double
 
 )
