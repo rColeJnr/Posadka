@@ -5,4 +5,8 @@
     <string name="classAccuracy">Класс точности</string>
     <string name="val">Система вала</string>
     <string name="deviations">Отклонения</string>
+    <string name="estext">ES: %1S</string>
+    <string name="istext">IS: %1S</string>
+    <string name="low_deviation">Нижнее отклонение</string>
+    <string name="high_deviation">верхнее отклонение</string>
 </resources>

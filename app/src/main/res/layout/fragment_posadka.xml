@@ -1,77 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/eightdp"
         android:text="@string/size"
-        android:textAppearance="?attr/textAppearanceHeadline5"
-        />
+        android:textAppearance="?attr/textAppearanceHeadline5" />
 
     <EditText
+        android:id="@+id/size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
         android:layout_marginHorizontal="@dimen/eightdp"
-        android:id="@+id/size"
         android:hint="@string/size"
         android:inputType="number"
-        android:textAppearance="?attr/textAppearanceBody1"
-        />
+        android:minHeight="48dp"
+        android:textAppearance="?attr/textAppearanceBody1" />
 
     <TextView
+        android:id="@+id/classAccuracy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/eightdp"
-        android:id="@+id/classAccuracy"
         android:text="@string/classAccuracy"
-        android:textAppearance="?attr/textAppearanceHeadline5"
-        />
+        android:textAppearance="?attr/textAppearanceHeadline5" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/deviation_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        app:thumbTint="@color/black"
+        app:trackTint="@android:color/darker_gray"
+        android:layout_margin="@dimen/eightdp"
+        android:checked="true"
+        android:text="@string/hole"
+        android:textAppearance="?attr/textAppearanceBody2" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:layout_margin="@dimen/eightdp"
-        android:id="@+id/val"
-        android:hint="@string/val"
-        android:inputType="number"
-        android:textAppearance="?attr/textAppearanceBody1"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:layout_margin="@dimen/eightdp"
         android:id="@+id/hole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/eightdp"
         android:hint="@string/hole"
         android:inputType="number"
-        android:textAppearance="?attr/textAppearanceBody2"
-        />
+        android:minHeight="48dp"
+        android:textAppearance="?attr/textAppearanceBody2" />
 
     <TextView
+        android:id="@+id/deviations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/eightdp"
-        android:id="@+id/deviations"
         android:text="@string/deviations"
         android:textAppearance="?attr/textAppearanceHeadline5"
-        app:layout_constraintTop_toBottomOf="@+id/hole"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/hole" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cardView"
-        android:layout_margin="@dimen/eightdp"
         android:layout_gravity="center"
+        android:layout_margin="@dimen/eightdp"
         android:elevation="@dimen/eightdp">
 
         <LinearLayout
@@ -80,35 +76,32 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/val_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/eightdp"
-                android:paddingHorizontal="@dimen/eightdp"
-                android:minHeight="30dp"
-                android:id="@+id/val_result"
-                android:text="512"
                 android:gravity="start|center_vertical"
-                android:textAlignment="gravity"
-                />
+                android:minHeight="30dp"
+                android:paddingHorizontal="@dimen/eightdp"
+                android:text="@string/high_deviation"
+                android:textAlignment="gravity" />
 
             <TextView
+                android:id="@+id/hole_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/eightdp"
-                android:paddingHorizontal="@dimen/eightdp"
-                android:minHeight="30dp"
-                android:id="@+id/hole_result"
-                android:text="512"
                 android:gravity="start|center_vertical"
+                android:minHeight="30dp"
+                android:paddingHorizontal="@dimen/eightdp"
+                android:text="@string/low_deviation"
                 android:textAlignment="gravity"
-                app:layout_constraintEnd_toEndOf="parent"
-              />
+                app:layout_constraintEnd_toEndOf="parent" />
 
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
 
 
 </LinearLayout>
