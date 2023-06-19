@@ -15,8 +15,8 @@ data class PosadkaHole(
     @ColumnInfo(name = "class")
     val name: String,
     @ColumnInfo(name = "highdeviation")
-    val highDeviation: Double,
+    val highDeviation: Float,
     @ColumnInfo(name = "lowdeviaton")
-    val lowDeviation: Double
+    val lowDeviation: Float
 
 )
