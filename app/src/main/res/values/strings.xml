@@ -11,4 +11,5 @@
     <string name="low_deviation">Нижнее отклонение</string>
     <string name="high_deviation">Верхнее отклонение</string>
     <string name="error">Отклонения не найдены</string>
+    <string name="error_gap">Посадка не найдены</string>
 </resources>
